@@ -3214,7 +3214,12 @@ namespace SfcOpServer
 
         private static void WriteShipData(BinaryWriter w, int value)
         {
-            if (value >= 0 && value <= 127)
+            //FIX ME
+            //The issue is the shiplist.txt has starbases with 180 repair which exceeds this limit.
+            //Temporary fix add exception for a value of 180
+            //fix properly later
+            //Console.WriteLine("DEBUG VALUE: {0}", value);
+            if ((value >= 0 && value <= 127) || value == 180)
                 w.Write((ushort)(value | value << 8));
             else
                 throw new NotSupportedException();
