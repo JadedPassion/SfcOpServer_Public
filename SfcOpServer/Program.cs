@@ -63,7 +63,7 @@ namespace SfcOpServer
             // starts the services
 
 #if DEBUG
-            string appDirectory = "C:/Users/D4v1k/Documents/My Games/Starfleet Command 2 Orion Pirates";
+            string appDirectory = "E:/SFCServer/net5.0";
 #else
             string appDirectory = AppContext.BaseDirectory;
 #endif
